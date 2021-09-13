@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+body {
+  background: #cfcbcb;
+  font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+}
+
+.nested {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+.navbar {
+  background: #a8a5a5;
+  padding: 0;
+  border: solid;
+}
+
+.navbar .logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+  font-size: 2.5em;
+}
+
+.navbar .logo span {
+  color: white;
+}
+
+.location-section {
+  background: #4d4747;
+  width: 100%;
+  padding: 0em;
+  border: solid;
+  display: -ms-grid;
+  display: grid;
+  grid-row: auto;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.location-section .places span {
+  font-weight: bold;
+  font-size: 30px;
+  color: red;
+}
+
+/*.nav-section {
+  background: rgb(63, 60, 60);
+  width: 50%;
+  display: grid;
+  float: left;
+  //grid-column: 1/3;
+}*/
+.map {
+  height: max;
+}
+
+.map #map {
+  height: 100vh;
+  width: 100%;
+}
+/*# sourceMappingURL=main.css.map */
