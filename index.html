@@ -1,10 +1,14 @@
 <!DOCTYPE html>
+<style>body {
+    font-size: 20px;
+  }</style>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps !</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css.css">
@@ -12,6 +16,12 @@
 </head>
 
 <body>
+            <h1 class="heading">
+              Hello! Welcome to <span class="text--purple">Google Maps ! Where would you like to go ?</span>&nbsp;<span class="wave">👋</span>
+            </h1>
+            <p class="intro">
+            Please Enter the Latitude and Longtitude of the Address you would like to see ! <span style='font-size:25px;'>&#127757;</span>
+            </p>
     <div class="container-fluid">
         <div class="row">
             <div class="col-6 no-padding">
@@ -19,12 +29,12 @@
                     <div class="col-6">
                         <form id="form">
                             <div class="form-group">
-                                <label for="lattitude">Lattitude</label>
+                                <label for="Latitude">Latitude</label>
                                 <input type="number" class="form-control" name="lattitude" id="lattitude"
                                     placeholder="33.883415">
                             </div>
                             <div class="form-group">
-                                <label for="longitude">Lattitude</label>
+                                <label for="Longitude">Longitude</label>
                                 <input type="number" class="form-control" name="longitude" id="longitude"
                                     placeholder="-117.885626">
                             </div>
