@@ -15,6 +15,10 @@ submitButton.addEventListener("click", (e) => {
     formData = Object.fromEntries(formData.entries());
     getRequest(parseFloat(formData.lattitude), parseFloat(formData.longitude));
     initMap(parseFloat(formData.lattitude), parseFloat(formData.longitude));
+    if(Math.abs(parseFloat(formData.lattitude)) >= 180 || Math.abs(parseFloat(formData.longitude)) >= 180){
+        document.getElementById("result").innerHTML = "Invalid Input, please try again.";
+    }
+    else{document.getElementById("result").innerHTML = "Valid Input";}
 });
 
 const getRequest = (lat, long) => {
