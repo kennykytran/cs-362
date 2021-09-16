@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<style>body {
-    font-size: 20px;
-  }</style>
+<style>
+    body {
+        font-size: 20px;
+    }
+</style>
 <html lang="en">
 
 <head>
@@ -16,15 +18,18 @@
 </head>
 
 <body>
-            <h1 class="heading">
-              Hello! Welcome to <span class="text--purple">Google Maps ! Where would you like to go ?</span>&nbsp;<span class="wave">👋</span>
-            </h1>
-            <p class="intro">
-            Please Enter the Latitude and Longtitude of the Address you would like to see ! <span style='font-size:25px;'>&#127757;</span>
-            </p>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-6 no-padding">
+                <h1 class="heading">
+                    Hello! Welcome to <span class="text--purple">Google Maps ! Where would you like to go
+                        ?</span>&nbsp;<span class="wave">👋</span>
+                </h1>
+                <p class="intro">
+                    Please Enter the Latitude and Longtitude of the Address you would like to see ! <span
+                        style="font-size:25px;">&#127757;</span>
+                </p>
                 <div class="row justify-content-center align-items-center form-container">
                     <div class="col-6">
                         <form id="form">
@@ -40,6 +45,7 @@
                             </div>
                             <button class="btn btn-primary" id="submit">Submit</button>
                         </form>
+                        <div id="restaurants-display"></div>
                     </div>
                 </div>
             </div>
@@ -75,7 +81,6 @@
 
 
 
-    <script defer src="./js.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -85,9 +90,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT8_8cCx9L5rbooqW26KV5jDXTHANqOMI&callback=initMap">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT8_8cCx9L5rbooqW26KV5jDXTHANqOMI&">
+    </script>
+    <script defer src="./js.js"></script>
 </body>
 
 </html>
