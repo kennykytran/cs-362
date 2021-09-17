@@ -1,11 +1,12 @@
 let submitButton = document.querySelector("#submit");
 let form = document.querySelector("#form");
 let restaurantDisplay = document.querySelector("#restaurants-display");
+let map;
 
 const initMap = (lattitude = 33.883415, longitutde = -117.885626) => {
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: lattitude, lng: longitutde },
-        zoom: 16,
+        zoom: 14,
     });
 };
 
@@ -36,8 +37,14 @@ const getRequest = (lat, long) => {
         .then((response) => {
             restaurant_data = response.data.businesses;
             for (let i = 0; i < 3; i++) {
-                console.log("ss");
                 restaurantDisplay.innerHTML += `<h4>${restaurant_data[i].name}</h4>`;
+                new google.maps.Marker({
+                    position: {
+                        lat: restaurant_data[i].coordinates.latitude,
+                        lng: restaurant_data[i].coordinates.longitude,
+                    },
+                    map: map,
+                });
             }
         });
 };
