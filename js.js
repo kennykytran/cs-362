@@ -6,7 +6,7 @@ let map;
 const initMap = (lattitude = 33.883415, longitutde = -117.885626) => {
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: lattitude, lng: longitutde },
-        zoom: 14,
+        zoom: 13,
     });
 };
 
@@ -14,12 +14,18 @@ submitButton.addEventListener("click", (e) => {
     e.preventDefault();
     let formData = new FormData(form);
     formData = Object.fromEntries(formData.entries());
+    restaurantDisplay.innerHTML = " ";
     getRequest(parseFloat(formData.lattitude), parseFloat(formData.longitude));
     initMap(parseFloat(formData.lattitude), parseFloat(formData.longitude));
-    if(Math.abs(parseFloat(formData.lattitude)) >= 180 || Math.abs(parseFloat(formData.longitude)) >= 180){
-        document.getElementById("result").innerHTML = "Invalid Input, please try again.";
+    if (
+        Math.abs(parseFloat(formData.lattitude)) >= 180 ||
+        Math.abs(parseFloat(formData.longitude)) >= 180
+    ) {
+        document.getElementById("result").innerHTML =
+            "Invalid Input, please try again.";
+    } else {
+        document.getElementById("result").innerHTML = "Valid Input";
     }
-    else{document.getElementById("result").innerHTML = "Valid Input";}
 });
 
 const getRequest = (lat, long) => {
