@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
+  background: rgb(207, 203, 203);
+  font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
+  display: grid;
+  //grid-template-columns: 50% 50%;
+  //grid-row-gap: 1em;
+}
+
+.nested {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.navbar {
+  background: rgb(168, 165, 165);
+  padding: 0;
+  //width: 50%;
+  //float: left;
+  //margin-right: 0em;
+  border: solid;
+
+  .logo {
+    text-decoration: none;
+    font-weight: bold;
+    color: red;
+    font-size: 2.5em;
+
+    span {
+      color: white;
+    }
+  }
+}
+
+.location-section {
+  background: rgb(77, 71, 71);
+  width: 100%;
+  //margin-right: 0em;
+  padding: 0em;
+  border: solid;
+  display: grid;
+  //grid-column: 1/3;
+  grid-row: auto;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+
+  .places {
+    span {
+      font-weight: bold;
+      font-size: 30px;
+      color: red;
+    }
+  }
+}
+
+/*.nav-section {
+  background: rgb(63, 60, 60);
+  width: 50%;
+  display: grid;
+  float: left;
+  //grid-column: 1/3;
+}*/
+
+.map {
+  //margin: 0em;
+  //margin-top: 0em;
+  height: max;
+
+  #map {
+    height: 100vh;
+    width: 100%;
+    //float: right;
+  }
+}
