@@ -3,30 +3,12 @@ let form = document.querySelector("#form");
 let restaurantDisplay = document.querySelector("#restaurants-display");
 let map;
 
-initMap = (lattitude = 33.883415, longitutde = -117.885626) => {
+const initMap = (lattitude = 33.883415, longitutde = -117.885626) => {
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: lattitude, lng: longitutde },
-        zoom: 16,
+        zoom: 13,
     });
 };
-
-submitButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    let formData = new FormData(form);
-    formData = Object.fromEntries(formData.entries());
-    restaurantDisplay.innerHTML = " ";
-    getRequest(parseFloat(formData.lattitude), parseFloat(formData.longitude));
-    initMap(parseFloat(formData.lattitude), parseFloat(formData.longitude));
-    if (
-        Math.abs(parseFloat(formData.lattitude)) >= 180 ||
-        Math.abs(parseFloat(formData.longitude)) >= 180
-    ) {
-        document.getElementById("result").innerHTML =
-            "Invalid Input, please try again.";
-    } else {
-        document.getElementById("result").innerHTML = "Valid Input";
-    }
-});
 
 const getRequest = (lat, long) => {
     const config = {
@@ -48,6 +30,7 @@ const getRequest = (lat, long) => {
             restaurant_data = response.data.businesses;
             for (let i = 0; i < 3; i++) {
                 restaurantDisplay.innerHTML += `<h4>${restaurant_data[i].name}</h4>`;
+                restaurantDisplay.innerHTML += `<h5>${restaurant_data[i].location.display_address}</h5>`;
                 new google.maps.Marker({
                     position: {
                         lat: restaurant_data[i].coordinates.latitude,
@@ -58,9 +41,29 @@ const getRequest = (lat, long) => {
             }
         });
 };
-
+//let submitButton = document.querySelector("#submit");
+//let form = document.querySelector("#form");
 const initialize = () => {
     initMap();
 };
+
+submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    let formData = new FormData(form);
+    formData = Object.fromEntries(formData.entries());
+    restaurantDisplay.innerHTML = " ";
+    getRequest(parseFloat(formData.lattitude), parseFloat(formData.longitude));
+    initMap(parseFloat(formData.lattitude), parseFloat(formData.longitude));
+    if (
+        Math.abs(parseFloat(formData.lattitude)) >= 180 ||
+        Math.abs(parseFloat(formData.longitude)) >= 180
+    ) {
+        document.getElementById("result").innerHTML =
+            "Invalid Input, please try again.";
+    } else {
+        document.getElementById("result").innerHTML = "Valid Input";
+    }
+});
+
 
 initialize();
