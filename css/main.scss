@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 body {
-  background: rgb(207, 203, 203);
+  background: rgb(97, 94, 94);
   font-family: "Open Sans";
   margin: 0;
   padding: 0;
-  display: grid;
+  //display: grid;
   //grid-template-columns: 50% 50%;
   //grid-row-gap: 1em;
+  //display: flex;
 }
 
 .nested {
@@ -16,41 +17,82 @@ body {
 }
 
 .navbar {
-  background: rgb(168, 165, 165);
+  background: rgb(175, 59, 59);
   padding: 0;
   //width: 50%;
   //float: left;
   //margin-right: 0em;
-  border: solid;
+  //border: solid;
+  height: 16vh;
+
+  .logoimg {
+    height: 9vh;
+    width: 9vh;
+    transform: rotate(50deg);
+  }
 
   .logo {
     text-decoration: none;
     font-weight: bold;
     color: red;
-    font-size: 2.5em;
+    font-size: 5vh;
 
     span {
       color: white;
     }
+  }
+
+  .logoline1 {
+    border: 0.3vh solid white;
+    width: 197vh;
+    //height: 1vh;
+  }
+
+  .logoline2 {
+    border: 0.3vh solid white;
+    width: 100%;
+    //height: 1vh;
   }
 }
 
 .location-section {
   background: rgb(77, 71, 71);
   width: 100%;
+  height: 100vh;
   //margin-right: 0em;
-  padding: 0em;
-  border: solid;
+  padding: 1vh;
+  //border: solid;
   display: grid;
   //grid-column: 1/3;
   grid-row: auto;
   grid-template-rows: 1fr 1fr 1fr 1fr;
 
+  input[type="number"] {
+    border: 2px solid gray;
+    padding: 0.3vh;
+    margin: 5px 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+    -moz-appearance: textfield;
+  }
+
+  .button {
+    margin-top: 3px;
+    padding: 0.3vh;
+    background-color: rgb(175, 59, 59);
+    color: white;
+    border-radius: 8px;
+    border-color: rgb(175, 59, 59);
+    width: 9vh;
+    height: 100;
+  }
+
   .places {
     span {
       font-weight: bold;
       font-size: 30px;
-      color: red;
+      color: white;
     }
   }
 }
@@ -58,19 +100,18 @@ body {
 /*.nav-section {
   background: rgb(63, 60, 60);
   width: 50%;
+  //height: 100vh;
   display: grid;
   float: left;
   //grid-column: 1/3;
 }*/
 
 .map {
-  //margin: 0em;
-  //margin-top: 0em;
-  height: max;
-
   #map {
-    height: 100vh;
     width: 100%;
-    //float: right;
+    height: 100%;
+    //margin: auto;
+    //display: flex;
+    //justify-content: center;
   }
 }
