@@ -38,7 +38,12 @@
               <input type="number" name="longitude" placeholder="Longitude" />
             </div>
             <button class="button" id="submit">Submit</button>
+            <div class="form-group">
+              <label for="result-label">Input:</label> 
+              <label id="result">Please enter a valid input.</label> 
+          </div>
           </form>
+          <div id="restaurants-display"></div>
         </div>
         <div>
           <p class="places"><span>Place 1</span></p>
@@ -77,5 +82,8 @@
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT8_8cCx9L5rbooqW26KV5jDXTHANqOMI&callback=initMap"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT8_8cCx9L5rbooqW26KV5jDXTHANqOMI&">
+    </script>
   </body>
 </html>
