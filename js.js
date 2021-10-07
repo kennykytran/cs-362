@@ -28,9 +28,9 @@ const getRequest = (lat, long) => {
         .get("https://api.yelp.com/v3/businesses/search?", config)
         .then((response) => {
             restaurant_data = response.data.businesses;
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 15; i++) {
                 restaurantDisplay.innerHTML += `<h4>${restaurant_data[i].name}</h4>`;
-                restaurantDisplay.innerHTML += `<h5>${restaurant_data[i].location.display_address}</h5>`;
+                restaurantDisplay.innerHTML += `<h5>${restaurant_data[i].location.display_address}</h5><br>`;
                 new google.maps.Marker({
                     position: {
                         lat: restaurant_data[i].coordinates.latitude,
