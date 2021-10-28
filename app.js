@@ -11,6 +11,15 @@ app.use(cors());
 
 app.get("/", (req, res) => {
     res.render("index", {});
+    
+});
+
+app.get("/", (req, res) => {
+    res.render("login", {});
+});
+
+app.get("/", (req, res) => {
+    res.render("regis", {});
 });
 
 app.get("/test", (req, res) => {
