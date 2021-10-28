@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Register</title>
-  </head>
-  <body>
-    <center>
-      <h3>Register Here</h3>
-      <form action="">
-        <table>
-          <tr>
-            <td>Username:</td>
-            <td>
-              <input type="text" name="user" />
-            </td>
-          </tr>
-          <tr>
-            <td>Password:</td>
-            <td>
-              <input type="Password" name="user_pass" />
-            </td>
-          </tr>
-          <tr>
-            <td>Email:</td>
-            <td>
-              <input type="email" name="user_email" />
-            </td>
-          </tr>
 
-          <tr>
-            <td>
-              <input type="submit" name="submit" value="Submit" />
-            </td>
-          </tr>
-        </table>
-      </form>
-    </center>
-  </body>
+<head>
+  <title>Register</title>
+</head>
+
+<body>
+  <center>
+    <h3>Register Here</h3>
+    <form action="/register" method="POST">
+      <table>
+        <tr>
+          <td>Username:</td>
+          <td>
+            <input type="text" name="user[username]" />
+          </td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td>
+            <input type="Password" name="user[password]" />
+          </td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>
+            <input type="email" name="user[email]" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input type="submit" name="submit" value="Submit" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </center>
+</body>
+
 </html>

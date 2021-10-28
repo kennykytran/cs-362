@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Login Form</title>
-  </head>
 
-  <body>
-    <center>
-      <h3>Login Here</h3>
+<head>
+  <title>Login Form</title>
+</head>
 
-      <form action="">
-        <table>
-          <tr>
-            <td>Username:</td>
-            <td>
-              <input type="text" name="user" />
-            </td>
-          </tr>
-          <tr>
-            <td>Password:</td>
-            <td>
-              <input type="text" name="password" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="submit" name="submit" value="Login" />
-            </td>
+<body>
+  <center>
+    <h3>Login Here</h3>
 
-            <td>
-              <a href="">Register</a>
-            </td>
-          </tr>
-        </table>
-      </form>
-    </center>
-  </body>
+    <form action="/login" method="post">
+      <table>
+        <tr>
+          <td>Username:</td>
+          <td>
+            <input type="text" name="user[username]" />
+          </td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td>
+            <input type="text" name="user[password]" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" name="submit" value="Login" />
+          </td>
+
+          <td>
+            <a href="">Register</a>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </center>
+</body>
+
 </html>
