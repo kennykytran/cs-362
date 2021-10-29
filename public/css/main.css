@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 body {
-  background: #615e5e;
+  background: #413e3e;
   font-family: "Open Sans";
   margin: 0;
   padding: 0;
@@ -45,6 +45,10 @@ body {
 .navbar .logoline2 {
   border: 0.3vh solid white;
   width: 198vh;
+}
+
+.navbar span {
+  color: white;
 }
 
 .location-section {
