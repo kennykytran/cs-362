@@ -29,8 +29,7 @@ const getRequest = (lat, long) => {
         .then((response) => {
             restaurant_data = response.data.businesses;
             for (let i = 0; i < 15; i++) {
-                restaurantDisplay.innerHTML += `<h4>${restaurant_data[i].name}</h4>`;
-                restaurantDisplay.innerHTML += `<h5>${restaurant_data[i].location.display_address}</h5><br>`;
+                restaurantDisplay.innerHTML += `<div class="location-box">${restaurant_data[i].name} <br> ${restaurant_data[i].location.display_address} </div><br>`;
                 new google.maps.Marker({
                     position: {
                         lat: restaurant_data[i].coordinates.latitude,
