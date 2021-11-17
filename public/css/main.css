@@ -2,8 +2,7 @@
 body {
   background: #413e3e;
   font-family: "Open Sans";
-  margin: 0;
-  padding: 0;
+  width: auto;
 }
 
 .nested {
@@ -14,41 +13,73 @@ body {
 }
 
 .navbar {
-  background: #af3b3b;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#af3b3b), to(#f06b12));
   padding: 0;
-  height: 16vh;
+  height: 17vh;
+  width: auto;
 }
 
 .navbar .logoimg {
-  height: 9vh;
-  width: 9vh;
-  -webkit-transform: rotate(50deg);
-          transform: rotate(50deg);
+  height: 8vh;
+  width: 8vh;
 }
 
 .navbar .logo {
   text-decoration: none;
   font-weight: bold;
   color: red;
-  font-size: 5vh;
+  font-size: 6vh;
 }
 
 .navbar .logo span {
   color: white;
 }
 
-.navbar .logoline1 {
-  border: 0.3vh solid white;
-  width: 198vh;
-}
-
-.navbar .logoline2 {
-  border: 0.3vh solid white;
-  width: 198vh;
+.navbar .logoline {
+  border: 3px solid white;
+  width: 200vh;
+  color: white;
 }
 
 .navbar span {
   color: white;
+}
+
+#navbutton {
+  padding: auto;
+  width: 20%;
+  height: 50px;
+  border: 3px solid;
+  background: rgba(0,0,0,0.0);
+  border-radius: 25px;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+#navbutton:hover {
+  border-color: rgba(0,0,0,0.0);
+  -webkit-transition: 0.5s;
+  background-color: rgba(0,0,0,0.25);
+  transition: 0.5s;
+}
+
+footer {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#af3b3b), to(#f06b12));
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.foot {
+  text-align: center;
+}
+
+.foot .line{
+  border: 3px solid white;
+  width: 200vh;
 }
 
 .location-section {
@@ -95,7 +126,7 @@ body {
   display: grid;
   width: 90vh;
   height: 75vh;
-  background-color: #af3b3b;
+  
   border-radius: 8px;
   padding: 8px;
   overflow: auto;
@@ -103,6 +134,14 @@ body {
 
 .location-section #restaurants-display {
   color: white;
+}
+
+.location-box{
+  font-size: 24px;
+  border-radius: 25px;
+  background: rgb(175, 59, 59);
+  padding: 20px;
+  height: 125px;
 }
 
 /*.nav-section {
