@@ -8,7 +8,6 @@ class User {
             [newUser.username],
             async (err, result) => {
                 if (err) {
-                    console.log(err);
                     done(err);
                     return;
                 }
@@ -35,6 +34,7 @@ class User {
                             return;
                         }
                         console.log(`New username ${newUser.username} created`);
+                        done(null);
                     }
                 );
             }
