@@ -2,6 +2,7 @@ let submitButton = document.querySelector("#submit");
 let form = document.querySelector("#form");
 let restaurantDisplay = document.querySelector("#restaurants-display");
 let map;
+var e = document.getElementById("sort");
 
 const initMap = (lattitude = 33.883415, longitutde = -117.885626) => {
     map = new google.maps.Map(document.getElementById("map"), {
@@ -21,6 +22,8 @@ const getRequest = (lat, long) => {
             term: "pizza",
             latitude: lat,
             longitude: long,
+            open_now: true,
+            sort_by: e.value,
         },
     };
 
