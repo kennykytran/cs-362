@@ -166,6 +166,15 @@ footer {
   overflow: auto;
 }
 
+.location-section .address::-webkit-scrollbar {
+  width: 12px;
+}
+
+.location-section .address::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, rgb(175, 59, 59));
+  border-radius: 6px;
+}
+
 .location-section #restaurants-display {
   color: white;
 }
@@ -174,8 +183,16 @@ footer {
   font-size: 24px;
   border-radius: 25px;
   background: rgb(175, 59, 59);
-  padding: 20px;
-  height: 125px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  height: auto;
+  overflow-y: auto;
+}
+
+.location-box::-webkit-scrollbar {
+  display: none;
 }
 
 /*.nav-section {

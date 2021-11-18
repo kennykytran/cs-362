@@ -32,7 +32,10 @@ const getRequest = (lat, long) => {
         .then((response) => {
             restaurant_data = response.data.businesses;
             for (let i = 0; i < 15; i++) {
-                restaurantDisplay.innerHTML += `<div class="location-box">${restaurant_data[i].name} <br> ${restaurant_data[i].location.display_address} </div><br>`;
+                restaurantDisplay.innerHTML += `<div class="location-box">${restaurant_data[i].name} <br> 
+                ${restaurant_data[i].location.display_address} <br> 
+                ${restaurant_data[i].rating} Stars -- ${Math.round(restaurant_data[i].review_count)} Reviews -- 
+                ${Math.round(restaurant_data[i].distance)} meters <br> Phone #: ${restaurant_data[i].phone}</div><br> `;
                 new google.maps.Marker({
                     position: {
                         lat: restaurant_data[i].coordinates.latitude,
