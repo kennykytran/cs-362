@@ -53,20 +53,17 @@ passport.deserializeUser((id, done) => {
 
 // ---------------------- ROUTES ----------------------
 const userRoutes = require("./routes/users");
+const APIRoutes = require("./routes/api");
 
 app.use(userRoutes);
-
-app.get("/secret", (req, res) => {
-    if (req.isAuthenticated()) {
-        res.status(200).send("PRIVATE INFO");
-    } else {
-        res.status(400).send("You need to sign in");
-    }
-});
+app.use("/api", APIRoutes);
 
 // -----------------------------------------------------
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("index", {
+        isAuthenticated: req.isAuthenticated(),
+        username: "TEST",
+    });
 });
 
 app.listen(port, () => {
