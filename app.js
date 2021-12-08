@@ -50,13 +50,18 @@ passport.deserializeUser((id, done) => {
         done(err, user.id);
     });
 });
-
+app.use((req, res, next) => {
+    res.locals.isAuthenticated = req.isAuthenticated();
+    next();
+});
 // ---------------------- ROUTES ----------------------
 const userRoutes = require("./routes/users");
 const APIRoutes = require("./routes/api");
+const scoreRoutes = require("./routes/scores");
 
 app.use(userRoutes);
 app.use("/api", APIRoutes);
+app.use(scoreRoutes);
 
 // -----------------------------------------------------
 app.get("/", (req, res) => {
@@ -64,6 +69,10 @@ app.get("/", (req, res) => {
         isAuthenticated: req.isAuthenticated(),
         username: "TEST",
     });
+    // res.send({
+    //     isAuthenticated: req.isAuthenticated(),
+    //     username: "TEST",
+    // });
 });
 
 app.listen(port, () => {
