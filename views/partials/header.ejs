@@ -18,15 +18,17 @@
             <a class="logo" href="#"><span>PIZZA RADAR </span><img class="logoimg" src="/images/piz.png"
                     alt="Pizza Icon" /></a>
 
-            <% if (isAuthenticated) { %>
+            <% if (user) { %>
                 <h2>
-                    <%= user.name || "USER NAME HERE" %>
+                    <%= user.username %>
                 </h2>
+                <a class="btn btn-primary" href="/logout" id="navbutton">Logout</a>
                 <% } else { %>
                     <a class="btn btn-primary" href="/login" id="navbutton">Login</a>
+                    <a class="btn btn-primary" href="/register" id="navbutton">Register</a>
                     <% } %>
 
-                        <a class="btn btn-primary" href="/register" id="navbutton">Register</a>
+
         </div>
         <hr class="logoline" />
     </div>
