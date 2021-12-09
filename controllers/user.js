@@ -29,5 +29,5 @@ exports.login = () => {
 
 exports.logout = (req, res) => {
     req.logout();
-    res.redirect("/login");
+    res.redirect("/");
 };
