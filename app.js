@@ -31,27 +31,26 @@ app.use(
 );
 
 // ---------------------- PASSPORT CONFIGURATION ----------------------
-
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(localStrategy);
 
 passport.serializeUser((user, done) => {
-    done(null, user.id);
+    done(null, user);
 });
 
-passport.deserializeUser((id, done) => {
-    db.query("SELECT * FROM user WHERE id=?", [id], (err, result) => {
+passport.deserializeUser((user, done) => {
+    db.query("SELECT * FROM user WHERE id=?", [user.id], (err, result) => {
         if (err) {
             done(err);
             return;
         }
         user = result[0];
-        done(err, user.id);
+        done(err, user);
     });
 });
 app.use((req, res, next) => {
-    res.locals.isAuthenticated = req.isAuthenticated();
+    res.locals.user = req.user;
     next();
 });
 // ---------------------- ROUTES ----------------------
@@ -65,14 +64,7 @@ app.use(scoreRoutes);
 
 // -----------------------------------------------------
 app.get("/", (req, res) => {
-    res.render("index", {
-        isAuthenticated: req.isAuthenticated(),
-        username: "TEST",
-    });
-    // res.send({
-    //     isAuthenticated: req.isAuthenticated(),
-    //     username: "TEST",
-    // });
+    res.render("index");
 });
 
 app.listen(port, () => {
