@@ -12,7 +12,7 @@ exports.register = (req, res) => {
             res.redirect("/register");
             return;
         }
-        res.redirect("/");
+        res.redirect("/login");
     });
 };
 
