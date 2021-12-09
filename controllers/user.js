@@ -23,11 +23,12 @@ exports.displayLoginForm = (req, res) => {
 exports.login = () => {
     return passport.authenticate("local", {
         successRedirect: "/",
-        failureRedirect: "/login-failure",
+        failureRedirect: "/login",
     });
 };
 
 exports.logout = (req, res) => {
+    console.log(`[${req.user.username}] logged out`);
     req.logout();
     res.redirect("/");
 };
