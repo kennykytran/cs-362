@@ -9,7 +9,7 @@ const localStrategy = new LocalStrategy(
     },
     (username, password, done) => {
         // Check if username existed in database
-        console.log(username, password);
+        console.log(`[${username}] attempted log in`);
         db.query(
             "SELECT * FROM user WHERE username = ?",
             [username],
@@ -27,6 +27,7 @@ const localStrategy = new LocalStrategy(
 
                 if (isPasswordCorrect) {
                     console.log("CORRECT PASSWORD");
+                    console.log(`[${username}] logged in`);
                     return done(null, user);
                 } else {
                     console.log("WRONG PASSWORD");
