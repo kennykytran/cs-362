@@ -10,7 +10,7 @@
 
 ## **Website Link**
 
-* https://pizza-radar.herokuapp.com/
+* https://pizzaradar.herokuapp.com/
 
 ### ***Team Members: Peter Van, Kenny Tran, Sam Le , Abhinav Arora.***
 
@@ -19,7 +19,7 @@
 
 ## ***Iteration Milestone***
 
-#### ***Iteration 4***
+#### ***Iteration 5***
 
 * In this Iteration we've worked on deployment of our website, we Have also updated our homepage, and titlebar, and sort by feature, and reset button implementation.
 
