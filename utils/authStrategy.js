@@ -28,7 +28,7 @@ const localStrategy = new LocalStrategy(
                 if (isPasswordCorrect) {
                     console.log("CORRECT PASSWORD");
                     console.log(`[${username}] logged in`);
-                    return done(null, user);
+                    return done(null, { id: user.id, username: user.username });
                 } else {
                     console.log("WRONG PASSWORD");
                     return done(null, false);
