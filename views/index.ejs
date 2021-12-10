@@ -2,32 +2,34 @@
   <section class="nested">
     <section class="location-section">
       <div class="container">
-        
-        <a href="/score" class="button">Check Your Score</a>
-        <form action="" id="form">
-          <div class="lat-form">
-            <input type="number" autocomplete="on" name="lattitude" placeholder="Lattitude" />
-          </div>
-          <div class="long-form">
-            <input type="number" autocomplete="on" name="longitude" placeholder="Longitude" />
-          </div>
-          <button class="button" id="submit">Submit</button>
-          <input type="reset" /> <br />
-          <label for="sort">Sort By:</label>
-          <select id="sort" name="sort">
-            <option value="best_match">Best Match</option>
-            <option value="rating">Ratings</option>
-            <option value="review_count">Review Counts</option>
-            <option value="distance">Distance</option>
-          </select>
-          <div class="form-group">
-            <label for="result-label">Input:</label>
-            <label id="result">Please enter a valid input.</label>
-          </div>
-        </form>
-        <div class="address">
-          <div id="restaurants-display"></div>
-        </div>
+
+        <% if (user) { %>
+          <a href="/score" class="button">Check Your Score</a>
+          <% } %>
+            <form action="" id="form">
+              <div class="lat-form">
+                <input type="number" autocomplete="on" name="lattitude" placeholder="Lattitude" />
+              </div>
+              <div class="long-form">
+                <input type="number" autocomplete="on" name="longitude" placeholder="Longitude" />
+              </div>
+              <button class="button" id="submit">Submit</button>
+              <input type="reset" /> <br />
+              <label for="sort">Sort By:</label>
+              <select id="sort" name="sort">
+                <option value="best_match">Best Match</option>
+                <option value="rating">Ratings</option>
+                <option value="review_count">Review Counts</option>
+                <option value="distance">Distance</option>
+              </select>
+              <div class="form-group">
+                <label for="result-label">Input:</label>
+                <label id="result">Please enter a valid input.</label>
+              </div>
+            </form>
+            <div class="address">
+              <div id="restaurants-display"></div>
+            </div>
       </div>
     </section>
 
