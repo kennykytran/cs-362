@@ -8,10 +8,6 @@
 
 * https://trello.com/b/YzGfSVyM/362-project-pizzaradar
 
-## **Website Link**
-
-* https://pizzaradar.herokuapp.com/
-
 ### ***Team Members: Peter Van, Kenny Tran, Sam Le , Abhinav Arora.***
 
 ## ***Purpose***
